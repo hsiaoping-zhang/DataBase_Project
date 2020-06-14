@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>855</width>
+    <height>579</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="TestButton">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>169</y>
+      <width>71</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>執行</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>190</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>這裡輸入指令 :</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="queryText">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>170</y>
+      <width>291</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Calibri</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>90</y>
+      <width>291</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>80</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>選擇方法 : </string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>170</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>查詢結果 : </string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="resultText">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>220</y>
+      <width>331</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>( 查詢結果 )</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="table">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>310</y>
+      <width>551</width>
+      <height>211</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnSelect">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>259</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>SELECT</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnDistinct">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>260</y>
+      <width>81</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>DISTINCT</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnFrom">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>259</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>FROM</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnWhere">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>259</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>WHERE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>80</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>執行結果 :</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="exec_result">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>120</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>( 執行結果 )</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>30</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>目前TABLE :</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="table_text">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>30</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>13</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>SONG</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="table_movie">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>370</y>
+      <width>91</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>MOVIE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="table_place">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>430</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>PLACE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="table_concert">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>400</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>CONCERT</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="table_song">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>310</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>SONG</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="table_person">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>460</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>PERSON</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="table_album">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>340</y>
+      <width>91</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>ALBUM</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>270</y>
+      <width>101</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>TABLE 列表</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>130</y>
+      <width>121</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>column 內容 :</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_column">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>130</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnDelete">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>260</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>DELETE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnUpdate">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>260</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>微軟正黑體</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>UPDATE</string>
+    </property>
+   </widget>
+   <zorder>table</zorder>
+   <zorder>TestButton</zorder>
+   <zorder>label</zorder>
+   <zorder>queryText</zorder>
+   <zorder>comboBox</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label_3</zorder>
+   <zorder>resultText</zorder>
+   <zorder>btnSelect</zorder>
+   <zorder>btnDistinct</zorder>
+   <zorder>btnFrom</zorder>
+   <zorder>btnWhere</zorder>
+   <zorder>label_6</zorder>
+   <zorder>exec_result</zorder>
+   <zorder>label_4</zorder>
+   <zorder>table_text</zorder>
+   <zorder>table_movie</zorder>
+   <zorder>table_place</zorder>
+   <zorder>table_concert</zorder>
+   <zorder>table_song</zorder>
+   <zorder>table_person</zorder>
+   <zorder>table_album</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_7</zorder>
+   <zorder>comboBox_column</zorder>
+   <zorder>btnDelete</zorder>
+   <zorder>btnUpdate</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>855</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
