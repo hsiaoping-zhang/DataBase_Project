@@ -7,6 +7,27 @@
 - 開發環境：Windows 10 + Qt Designer
 - 資料庫：`SQLite`
 
+## 資料庫設計
+
+- 主題：林俊傑作品資料庫
+- 說明：參考維基百科，將林俊傑的歌手專輯、歌曲、演唱會及演出相關影視作品製成此資料庫。
+    - [Link](https://zh.wikipedia.org/wiki/%E6%9E%97%E4%BF%8A%E6%9D%B0#%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81)：維基百科
+    - [Link](https://zh.wikipedia.org/wiki/%E6%9E%97%E4%BF%8A%E5%82%91%E5%B0%88%E8%BC%AF%E5%88%97%E8%A1%A8)：歌曲列表
+- 專案階段流程：
+    - 資料蒐集：以網頁爬蟲方式將資料下載，先行存到 csv 檔後進行手動校正
+    - 寫入資料庫：以 `python` 將整理完的 csv 檔案寫入 SQLite 資料庫
+    - GUI 介面：以 python 搭配套件 `PyQt5` 並使用 `Qt Designer` 進行介面開發，資料庫則是使用 SQLite 進行相關操作
+
+### ER diagram
+![](https://i.imgur.com/wtaND9O.png)
+
+
+- 主打歌：一張專輯一首主打歌，一首歌不一定是主打歌
+- 收錄：一張專輯收錄好幾首歌
+- 參與：一個音樂電影裡面有歌曲、電影本身和合作對象組合
+- 嘉賓：一場演唱會不一定有嘉賓，但一個人可以擔任很多場演唱會嘉賓
+- 所在：演唱會可以在同一地方開很多次，但一定要有地方開
+
 ## 介面及使用說明
 ![](https://i.imgur.com/MeFYoU6.png)
 
@@ -88,29 +109,6 @@ SELECT * FROM CONCERT GROUP BY Series HAVING count(Series) > 20
 
 **Fail**
 ![](https://i.imgur.com/WcFCexx.png)
-
-
-
-## 資料庫設計
-
-- 主題：林俊傑作品資料庫
-- 說明：參考維基百科，將林俊傑的歌手專輯、歌曲、演唱會及演出相關影視作品製成此資料庫。
-    - [Link](https://zh.wikipedia.org/wiki/%E6%9E%97%E4%BF%8A%E6%9D%B0#%E9%9F%B3%E6%A8%82%E4%BD%9C%E5%93%81)：維基百科
-    - [Link](https://zh.wikipedia.org/wiki/%E6%9E%97%E4%BF%8A%E5%82%91%E5%B0%88%E8%BC%AF%E5%88%97%E8%A1%A8)：歌曲列表
-- 專案階段流程：
-    - 資料蒐集：以網頁爬蟲方式將資料下載，先行存到 csv 檔後進行手動校正
-    - 寫入資料庫：以 `python` 將整理完的 csv 檔案寫入 SQLite 資料庫
-    - GUI 介面：以 python 搭配套件 `PyQt5` 並使用 `Qt Designer` 進行介面開發，資料庫則是使用 SQLite 進行相關操作
-
-### ER diagram
-![](https://i.imgur.com/wtaND9O.png)
-
-
-- 主打歌：一張專輯一首主打歌，一首歌不一定是主打歌
-- 收錄：一張專輯收錄好幾首歌
-- 參與：一個音樂電影裡面有歌曲、電影本身和合作對象組合
-- 嘉賓：一場演唱會不一定有嘉賓，但一個人可以擔任很多場演唱會嘉賓
-- 所在：演唱會可以在同一地方開很多次，但一定要有地方開
 
 
 ### Relation Schema
