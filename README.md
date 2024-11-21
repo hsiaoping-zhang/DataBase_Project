@@ -1,4 +1,4 @@
-# Songs' Database
+# JJ Lin Music Database
 資料庫期末 project
 
 ## 系統架構與環境
